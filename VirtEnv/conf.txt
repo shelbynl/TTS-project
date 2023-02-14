@@ -1,0 +1,3 @@
+# py -3 uses the global python interpreter. You can also use python3 -m venv .venv.
+py -3 -m venv .venv
+source .venv/Scripts/activate

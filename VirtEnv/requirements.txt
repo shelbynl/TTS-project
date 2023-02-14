@@ -1,0 +1,3 @@
+azure-mgmt-storage
+azure-storage-blob
+azure-cognitiveservices-speech

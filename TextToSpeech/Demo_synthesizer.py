@@ -72,11 +72,9 @@ speech_config.set_property(
     property_id=speechsdk.PropertyId.SpeechServiceResponse_RequestSentenceBoundary,
     value="true",
 )
-audio_config = speechsdk.audio.AudioOutputConfig(file="Click on the Icon drop-down and select an icon for your application.\
-                                                                              This is an optional step but it adds an extra level of quality to your application.\
-                                                                              Icons must be .ico files, and we used a 64x64 pixel image as an icon.")
+audio_c = speechsdk.audio.AudioOutputConfig(filename="audio_output.wav")
 speech_synthesizer = speechsdk.SpeechSynthesizer(
-    speech_config=speech_config, audio_config=audio_config
+    speech_config=speech_config, audio_config=audio_c
 )
 
 # Subscribe to events

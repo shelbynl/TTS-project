@@ -8,8 +8,8 @@ import os
 import azure.cognitiveservices.speech as speechsdk
 
 # The language of the voice that speaks.
-speech_synthesis_voice_name = "en-US-JennyNeural"
-VLM = speech_synthesis_voice_name
+VOICE = "en-US-JennyNeural"
+
 
 
 def speech_synthesizer_bookmark_reached_cb(evt: speechsdk.SessionEventArgs):
@@ -93,7 +93,7 @@ SSML = f"""<speak version='1.0' \
     xml:lang='en-US' \
     xmlns='http://www.w3.org/2001/10/synthesis'\
     xmlns:mstts='http://www.w3.org/2001/mstts'>
-    <voice name='{VLM}'>
+    <voice name='{VOICE}'>
     <mstts:viseme type='redlips_front'/>\
         The rainbow has seven colors: \
     <bookmark mark='colors_list_begin'/>\

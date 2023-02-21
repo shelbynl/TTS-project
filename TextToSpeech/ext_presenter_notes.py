@@ -13,24 +13,26 @@ import collections.abc
 from pptx import Presentation
 import pandas as pd
 
-FILE = \
-    'D:/Student_Assistant/CareerNavigation/New-Slides/02-CS9101.pptx'
+
+FILE=input()
+FILE_OUT = input()
 PPT=Presentation(FILE)
+
 
 def main():
     """runs the main function of the program"""
-    lst = enum_notes()
-    with open(file='FILE', mode='w', encoding='utf-8') as file_out:
-        df = pd.DataFrame(lst)
-        df.to_csv(file_out)
+    enum_notes()
+    file_o()
+
 
 def enum_notes():
     """Enumerates the notes and returns the text"""
     notes = []
     for page, slide in enumerate(PPT.slides):
-        text_note = slide.notes_slide.notes_text_frame.text
-        notes.append((page, text_note))
+        txt_note = slide.notes_slide.notes_text_frame.text
+        notes.append((page, txt_note))
     return notes
+
 
 def enum_slides():
     """Enumerates the slides for text"""
@@ -43,6 +45,17 @@ def enum_slides():
                 temp.append(shape.text)
         notes.append((page, temp))
     return notes
+
+
+def file_o():
+    """
+    and the file it will be written to
+    """
+    new_lst = []
+    with open(file=FILE_OUT, mode='w', encoding='utf-8') as file_out:
+        df = pd.DataFrame(new_lst)
+        df.to_csv(file_out)
+
 
 if __name__=='__main__':
     main()

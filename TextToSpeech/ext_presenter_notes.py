@@ -14,15 +14,18 @@ from pptx import Presentation
 import pandas as pd
 
 
-FILE=input()
-FILE_OUT = input()
-PPT=Presentation(FILE)
+# file_in = input("Input powerpoint file location for audio:\n")
+# dir_out = input("Input directory for output files:\n")
+
+FILE_IN = "D:\\Repositories\\TTS\\CareerNavigation\\New-Slides\\03-CS9101.pptx"
+FILE_OUT = "D:\\Repositories\\TTS\\CareerNavigation\\output_text\\03.csv"
+PPT = Presentation(FILE_IN)
 
 
 def main():
     """runs the main function of the program"""
-    enum_notes()
-    file_o()
+    x = enum_notes()
+    file_o(x)
 
 
 def enum_notes():
@@ -47,14 +50,14 @@ def enum_slides():
     return notes
 
 
-def file_o():
+def file_o(new_lst):
     """
     and the file it will be written to
     """
-    new_lst = []
+    # new_lst = []
     with open(file=FILE_OUT, mode='w', encoding='utf-8') as file_out:
         df = pd.DataFrame(new_lst)
-        df.to_csv(file_out)
+        df.to_csv(file_out, columns=df[1:])
 
 
 if __name__=='__main__':

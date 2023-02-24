@@ -1,0 +1,16 @@
+
+
+
+https://microsoftlearning.github.io/AI-102-AIEngineer/
+https://microsoftlearning.github.io/AI-102-AIEngineer/Instructions/00-setup.html
+https://microsoftlearning.github.io/AI-102-AIEngineer/Instructions/07-speech.html
+https://learn.microsoft.com/en-us/training/modules/transcribe-speech-input-text/7-exercise-speech-app
+
+
+PROJECT_ID =
+FILE_NAME =
+
+export PROJECT_ID=$PROJECT_ID
+export FILE_NAME=$FILE_NAME
+
+scripts/dashboard/dashboard.sh import $PROJECT_ID $FILE_NAME

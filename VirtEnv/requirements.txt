@@ -1,3 +1,8 @@
 azure-mgmt-storage
 azure-storage-blob
 azure-cognitiveservices-speech
+collections
+pptx
+pandas
+easygui
+os

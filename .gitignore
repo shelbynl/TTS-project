@@ -148,3 +148,5 @@ SDK/cognitive-services-speech-sdk-ingestion-v2.0.2/sampledata/customspeech/zh-CN
 SDK/cognitive-services-speech-sdk-ingestion-v2.0.2/sampledata/customspeech/ko-KR/
 SDK/cognitive-services-speech-sdk-ingestion-v2.0.2/sampledata/customspeech/ja-JP/
 SDK/cognitive-services-speech-sdk-ingestion-v2.0.2/sampledata/customspeech/pt-BR/
+
+*/TextToSpeech/credentials.txt

@@ -11,7 +11,6 @@ import azure.cognitiveservices.speech as speechsdk
 VOICE = "en-US-JennyNeural"
 
 
-
 def speech_synthesizer_bookmark_reached_cb(evt: speechsdk.SessionEventArgs):
     """defines the point when a bookmark has been reached in the voice synthesis"""
     print("BookmarkReached event:")
@@ -33,7 +32,7 @@ def speech_synthesizer_synthesis_completed_cb(evt: speechsdk.SessionEventArgs):
 
 def speech_synthesizer_synthesis_started_cb(evt: speechsdk.SessionEventArgs):
     """returns that speech has started"""
-    print("SynthesisStarted event")
+    print("SynthesisStarted event") # needs to call the evt variable
 
 
 def speech_synthesizer_synthesizing_cb(evt: speechsdk.SessionEventArgs):

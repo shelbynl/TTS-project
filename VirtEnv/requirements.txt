@@ -6,3 +6,8 @@ pptx
 pandas
 easygui
 os
+synthesizer
+collections.abc
+pptx
+numpy
+pyinputplus

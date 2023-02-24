@@ -12,6 +12,8 @@ REFERENCE:
 import collections.abc
 from pptx import Presentation
 import pandas as pd
+import numpy as np
+import pyinputplus as pyip
 
 
 # file_in = input("Input powerpoint file location for audio:\n")
@@ -24,12 +26,25 @@ PPT = Presentation(FILE_IN)
 
 def main():
     """runs the main function of the program"""
+    menu()
     scraped_text = enum_notes()
     file_o(scraped_text)
 
 
+def menu():
+    """
+    menu creates the function that will take
+    the input from the user and validate it
+    """
+    result = pyip.inputMenu(['Filename in',''], lettered=True)
+
+
+    return result
+
 def enum_notes():
-    """Enumerates the notes and returns the text"""
+    """
+    Enumerates the notes and returns the text
+    """
     notes = []
     for page, slide in enumerate(PPT.slides):
         txt_note = slide.notes_slide.notes_text_frame.text
@@ -38,7 +53,9 @@ def enum_notes():
 
 
 def enum_slides():
-    """Enumerates the slides for text"""
+    """
+    Enumerates the slides for text
+    """
     notes = []
     for page, slide in enumerate(PPT.slides):
         temp = []
@@ -52,11 +69,11 @@ def enum_slides():
 
 def file_o(new_lst):
     """
-    and the file it will be written to
+    The file it will be written to
     """
-    with open(file=FILE_OUT, mode='w', encoding='utf-8') as file_out:
+    with open(file=FILE_OUT, mode='w', encoding='utf-8') as tmp_file:
         data = pd.DataFrame(new_lst)
-        data.to_csv(file_out, columns=data[:-1])
+        data.to_csv(tmp_file, columns=data[:-1])
 
 
 if __name__=='__main__':

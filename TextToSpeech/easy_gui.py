@@ -2,10 +2,16 @@
 
 import os
 import easygui
+import synthesizer as synth
 
+x = synth
 MSG = "Load application..."
 TITLE="Text-to-Speech Audio ReImagination" # TSAR I
-CHOICES = ["Create Audio","Add Text","Exit"]
+CHOICES = ["Create Audio File",".","Exit"]
+
+easygui.ynbox(MSG, TITLE, ('Yes', 'No'))
+easygui.msgbox('This is a basic message box.', TITLE)
+
 
 # TODO: need titles for the execution in the GUI
 # TODO: need command line for inputting text in GUI
@@ -15,10 +21,10 @@ def main():
     """runs the main application"""
     reply = easygui.buttonbox(MSG, TITLE, CHOICES)
     if reply == CHOICES[0]:
-        demo = os.startfile("Demo_synthesizer.py")
-        return demo
+        return synth
     if reply == "CHOICES[1]":
-        os.system("")
+        num1 = os.startfile(f"{synth}")
+        return num1
     else:
         os.system("Exit")
         return

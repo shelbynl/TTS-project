@@ -87,13 +87,13 @@ with open('output.wav', 'wb') as f:
 
 ## Various Links
 
-[AI-102][1]
-[AI-102 00][2]
-[AI-102 07][3]
-[Transcribe Speech][4]
-[TTS Price per word][6]
-[Azure Documentation][7]
-[Speech Service][8]
+- [AI-102][1]
+- [AI-102 00][2]
+- [AI-102 07][3]
+- [Transcribe Speech][4]
+- [TTS Price per word][6]
+- [Azure Documentation][7]
+- [Speech Service][8]
 
 ## Export Environment Variables
 

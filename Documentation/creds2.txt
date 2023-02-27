@@ -1,0 +1,41 @@
+
+
+
+import os
+from azure.cognitiveservices.speech import SpeechConfig, SpeechSynthesizer
+from azure.cognitiveservices.speech.audio import AudioOutputConfig
+
+
+KEY=<your subscription key>
+REGION=<your region>
+
+
+def load_credentials():
+    with open('credentials.txt', 'r') as f:
+        lines = f.readlines()
+    key = lines[0].strip().split('=')[1]
+    region = lines[1].strip().split('=')[1]
+    return key, region
+
+
+def initialize_speech_config():
+    key, region = load_credentials()
+    speech_config = SpeechConfig(subscription=key, region=region)
+    return speech_config
+
+
+def synthesize_text(text):
+    speech_config = initialize_speech_config()
+    audio_config = AudioOutputConfig(use_default_speaker=True)
+    synthesizer = SpeechSynthesizer(speech_config=speech_config, audio_config=audio_config)
+    result = synthesizer.speak_text(text)
+    return result
+
+
+result = synthesize_text('Hello, world!')
+print(result)
+
+
+audio = result.get_waveform()
+with open('output.wav', 'wb') as f:
+    f.write(audio)

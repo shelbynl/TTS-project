@@ -1,0 +1,97 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "D:/Repositories/TTS/text_to_speech.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Repositories/TTS/azure_cognitiveservices_speech-1.25.0-py3-none-win_amd64.whl;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Repositories/TTS/azure_keyvault_secrets-4.6.0-py3-none-any.whl;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Repositories/TTS/credentials.txt;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/win32api.pyd;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/win32pdh.pyd;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/winxpgui.pyd;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}

@@ -2,6 +2,7 @@
 
 import os
 import sys
+from pathlib import Path
 import easygui
 import _collections_abc
 from azure.cognitiveservices.speech import SpeechConfig, SpeechSynthesizer
@@ -9,6 +10,10 @@ from azure.cognitiveservices.speech.audio import AudioOutputConfig
 
 # C:/Users/Thaddeus Maximus/AppData/Roaming/Python/Python311/site-packages/win32/win32api.pyd
 # C:/Users/Thaddeus Maximus/AppData/Roaming/Python/Python311/site-packages/win32/win32pdh.pyd
+
+def __path__(self):
+    self.path = Path()
+    return self.path('SP_KEY', 'SP_REG')
 
 def resource_path(relative_path):
     """
@@ -48,25 +53,25 @@ def get_user_choice():
     )
 
 
-def load_credentials():
+# def load_credentials():
     """Load Speech service credentials from the credentials.txt file"""
-    with open("credentials.txt", "r", encoding="utf-8") as file:
-        lines = file.readlines()
-        key = lines[0].strip().split("=")[1]
-        region = lines[1].strip().split("=")[1]
-    return os.environ.get("SP_KEY", key), os.environ.get("SP_REG", region)
+    #with open("credentials.txt", "r", encoding="utf-8") as file:
+        #lines = file.readlines()
+        # key = lines[0].strip().split("=")[1]
+        # region = lines[1].strip().split("=")[1]
+#    return os.environ.get("SP_KEY", key), os.environ.get("SP_REG", region)
 
 
-def initialize_speech_config():
+def initialize_speech_config(self):
     """Initialize and return a SpeechConfig object for the Speech service"""
-    key, region = load_credentials()
+    key, region = self.path('SP_KEY', 'SP_REG')
     speech_config = SpeechConfig(subscription=key, region=region)
     return speech_config
 
 
 def convert_file_to_audio(file_path, output_file_path):
     """Convert a file to audio"""
-    speech_config = initialize_speech_config()
+    speech_config = initialize_speech_config(self)
     audio_config = AudioOutputConfig(filename=f'{output_file_path}.wav')
     synthesizer = SpeechSynthesizer(
         speech_config=speech_config, audio_config=audio_config
@@ -76,9 +81,9 @@ def convert_file_to_audio(file_path, output_file_path):
     synthesizer.speak_text_async(text).get()
 
 
-def convert_files_to_audio(input_file_paths, output_file_path):
+def convert_files_to_audio(self, input_file_paths, output_file_path):
     """Convert multiple files to audio"""
-    speech_config = initialize_speech_config()
+    speech_config = initialize_speech_config(self)
     audio_config = AudioOutputConfig(filename=f'{output_file_path}.wav')
     synthesizer = SpeechSynthesizer(
         speech_config=speech_config, audio_config=audio_config

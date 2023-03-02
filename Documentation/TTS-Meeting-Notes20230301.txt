@@ -1,0 +1,36 @@
+"""
+
+Microsoft.CognitiveServices.Speech.core.dll
+
+pyinstaller.exe --add-binary .\TTS-project-Master\exe-config\Dependencies\win32api.pyd;. --onefile .\TTS-project-Master\text_to_speech\text_to_speech_class.py
+"""
+import pyinstaller
+
+
+pyinstaller \
+    --add-binary xzy.dll;. \
+    --onefile myscript.py
+
+def make_executable(main_script: str, files_to_add: List[str], target_location: str = None,
+name: str = 'app', single_file: bool = True) -> None:
+    """
+    Creating an executable file out of the provided parameters.
+    :param main_script: Main script of the application.
+    :param files_to_add: A list of files that are crucial to the project.
+    :param target_location: Where to store the executable file.
+    :param name: Name of the executable file.
+    :param single_file: Determine whether a single file or a directory is to be created.
+    :return: None.
+   """
+   args = [main_script, f'--name {name}']
+        if target_location is not None:
+            args.append(f'--distpath {target_location}')
+        if single_file:
+            args.append('--onefile')
+        for file in files_to_add:
+            args.append(f'--add-data {file}')
+        PyInstaller.__main__.run(args)
+
+
+
+    pyinstaller --noconfirm --onefile --windowed --debug all --add-binary D:/Repositories/TTS/TTS-project-Master/exe-config/Dependencies/win32api.pyd;. D:/Repositories/TTS/TTS-project-Master/text_to_speech/text_to_speech_class.py --distpath C:\Users\THADDE~1\AppData\Local\Temp\tmpb8z6adfz\application --workpath C:\Users\THADDE~1\AppData\Local\Temp\tmpb8z6adfz\build --specpath C:\Users\THADDE~1\AppData\Local\Temp\tmpb8z6adfz

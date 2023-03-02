@@ -8,8 +8,11 @@ works for dev and for PyInstaller
 import os
 import sys
 import easygui
+from argparse
 from azure.cognitiveservices.speech import SpeechConfig, SpeechSynthesizer
 from azure.cognitiveservices.speech.audio import AudioOutputConfig
+
+
 
 
 def install():
@@ -127,6 +130,28 @@ class TTS:
                 text = file.read()
             synthesizer.speak_text_async(text).get()
 
+    def make_executable(main_script: str, files_to_add: list[str], target_location: str = None,
+    name: str = 'app', single_file: bool = True) -> None:
+        """
+        Creating an executable file out of the provided parameters.
+        :param main_script: Main script of the application.
+        :param files_to_add: A list of files that are crucial to the project.
+        :param target_location: Where to store the executable file.
+        :param name: Name of the executable file.
+        :param single_file: Determine whether a single file or a directory is to be created.
+        :return: None.
+        https://stackoverflow.com/questions/72315624/pyinstaller-add-data-from-script
+    """
+        file = input()
+            if target_location is not None:
+                args.append("--dispath")
+                args.append(target_location)
+            if single_file:
+                args.append('--onefile')
+            for file in files_to_add:
+                args.append("--add-data")
+                args.append(f'{file};{tgt_loc}')
+
     def main(self):
         """Runs the main function of the TTS Class"""
         while True:
@@ -159,5 +184,19 @@ class TTS:
 
 
 if __name__ == "__main__":
+    install()
     tts = TTS()
     tts.main()
+
+"""
+    target_location = '../../output/text_to_speech_new.exe'
+    if target_location is not None:
+        args.append("--dispath")
+        args.append(target_location)
+    if single_file:
+        args.append('--onefile')
+    for file in files_to_add:
+        args.append("--add-data")
+        args.append(f'{file};{'../output/'}')
+
+"""

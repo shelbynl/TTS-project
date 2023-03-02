@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "PyInstaller\loader\pyimod03_ctypes.py", line 77, in __init__
+  File "ctypes\__init__.py", line 376, in __init__
+FileNotFoundError: Could not find module 'C:\Users\THADDE~1\AppData\Local\Temp\_MEI256322\azure\cognitiveservices\speech\Microsoft.CognitiveServices.Speech.core.dll' (or one of its dependencies). Try using the full path with constructor syntax.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "text-to-speech-class.py", line 11, in <module>
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "azure\cognitiveservices\speech\__init__.py", line 8, in <module>
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "azure\cognitiveservices\speech\speech.py", line 13, in <module>
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "azure\cognitiveservices\speech\interop.py", line 20, in <module>
+  File "ctypes\__init__.py", line 454, in LoadLibrary
+  File "PyInstaller\loader\pyimod03_ctypes.py", line 79, in __init__
+pyimod03_ctypes.install.<locals>.PyInstallerImportError: Failed to load dynlib/dll 'C:\\Users\\THADDE~1\\AppData\\Local\\Temp\\_MEI256322\\azure\\cognitiveservices\\speech\\Microsoft.CognitiveServices.Speech.core.dll'. Most likely this dynlib/dll was not found when the application was frozen.

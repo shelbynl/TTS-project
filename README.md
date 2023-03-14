@@ -2,6 +2,17 @@
 
 Text to Speech in Azure Cloud
 
+- [TTS-project](#tts-project)
+  - [Changes](#changes)
+  - [SSML](#ssml)
+    - [TODO: SSML Configuration](#todo-ssml-configuration)
+    - [General Steps](#general-steps)
+  - [Python Executable](#python-executable)
+  - [Various Links](#various-links)
+  - [Export Environment Variables](#export-environment-variables)
+    - [Alternate Method For Setting ENV Variables](#alternate-method-for-setting-env-variables)
+  - [Directory](#directory)
+
 ## Changes
 
 Some of the changes I made include:
@@ -19,12 +30,13 @@ Some of the changes I made include:
 
 ## SSML
 
-TODO: SSML Configuration
+### TODO: SSML Configuration
+
 To configure SSML (Speech Synthesis Markup Language) rules into a dictionary
 so that they can be automatically applied when a text-to-speech application
 starts converting the text into audio.
 
-Here are the general steps to do so:
+### General Steps
 
 1. **Create a dictionary**: The first step is to create a dictionary that contains the SSML rules that you want to apply.
    1. You can use any programming language to create this dictionary.
@@ -34,11 +46,13 @@ Here are the general steps to do so:
    1. Most text-to-speech applications support SSML, and you can use the appropriate tags to apply the rules defined in your dictionary.
 1. **Test and refine**: Finally, you should test your application to make sure that the SSML rules are being applied correctly.
    1. You may need to refine the rules and the mapping based on the results of your testing.
-1. Overall, using a dictionary to configure SSML rules can be a powerful way to automate the application of SSML markup in your text-to-speech applications.
+1. Dictionary to configure SSML rules could be a powerful way to automate the application of SSML in this applications.
 
 ## Python Executable
 
 ![auto-py-2-exe][5]
+
+<!-- This is old new now
 
 ### Alternate Method For Creating Executable
 
@@ -84,6 +98,7 @@ audio = result.get_waveform()
 with open('output.wav', 'wb') as f:
     f.write(audio)
 ```
+-->
 
 ## Various Links
 
@@ -105,11 +120,11 @@ export FILE_NAME=$FILE_NAME
 scripts/dashboard/dashboard.sh import $PROJECT_ID $FILE_NAME
 ```
 
-## Alternate Method
+### Alternate Method For Setting ENV Variables
 
 ```bash
-setx SPEECH_REGION
-set SPEECH_KEY
+setx | set SPEECH_REGION
+setx | set SPEECH_KEY
 ```
 
 ## Directory
